@@ -5,23 +5,38 @@
 .title-the {
   color: white;
   font-size: 58px;
-  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-width: 0.2px;
   -webkit-text-stroke-color: black;
+  text-transform: uppercase;
 }
 .title-hangman {
   color: white;
   font-size: 110px;
-  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-width: 0.2px;
   -webkit-text-stroke-color: black;
 }
 
 .title-game {
   color: white;
   font-size: 58px;
-  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-width: 0.2px;
   -webkit-text-stroke-color: black;
+  text-transform: uppercase;
 }
 
 .how-to-play {
-  font-weight: 8px;
+  font-weight: 32px;
+  color: white;
+  font-family: "Mouse Memoirs", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+.button-how-to-play {
+  font-size: 32px;
+  background-color: #2463ff;
+  border-radius: 50%;
+  height: 165px;
+  width: 497px;
 }

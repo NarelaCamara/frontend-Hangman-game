@@ -6,7 +6,9 @@ function App() {
     <div>
       <Title />
 
-      <p className="how-to-play">How to play</p>
+      <button className="button-how-to-play">
+        <p className="how-to-play">How to play</p>
+      </button>
     </div>
   );
 }
