@@ -1,0 +1,27 @@
+.title {
+  flex-direction: column;
+}
+
+.title-the {
+  color: white;
+  font-size: 58px;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+}
+.title-hangman {
+  color: white;
+  font-size: 110px;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+}
+
+.title-game {
+  color: white;
+  font-size: 58px;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+}
+
+.how-to-play {
+  font-weight: 8px;
+}
