@@ -11,9 +11,9 @@ export const Card = ({
 }) => {
   return (
     <div className="card">
-      <h2>{step}</h2>
-      <h1>{title}</h1>
-      <p>{description}</p>
+      <h2 className="card__step">{step}</h2>
+      <h1 className="card__title">{title}</h1>
+      <p className="card__description">{description}</p>
     </div>
   );
 };

@@ -3,3 +3,9 @@
   align-items: center;
   background-color: palevioletred;
 }
+
+.game_steps {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+}
