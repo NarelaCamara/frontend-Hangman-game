@@ -1,9 +1,9 @@
 import "./styles.css";
 
-export const Button = ({ image }: { image: string }) => {
+export const Button = ({ text }: { text: string }) => {
   return (
     <div className="button">
-      <img src={image} className="button__image" />
+      <p className="button__text">{text}</p>
     </div>
   );
 };

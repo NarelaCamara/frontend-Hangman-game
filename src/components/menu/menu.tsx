@@ -1,5 +1,9 @@
 import "./styles.css";
 
-export const Menu = () => {
-  return <div>Menu</div>;
+export const Menu = ({ image }: { image: string }) => {
+  return (
+    <div className="menu">
+      <img src={image} className="menu__image" />
+    </div>
+  );
 };

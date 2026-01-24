@@ -1,5 +1,5 @@
 import "./styles.css";
 
-export const Letter = () => {
-  return <div className="letter">Letter</div>;
+export const Letter = ({ letter }: { letter: string }) => {
+  return <div className="letter">{letter}</div>;
 };
