@@ -18,7 +18,7 @@ function App() {
     },
   ];
   return (
-    <div>
+    <div className="game">
       <Title />
       <Button text="How to play" />
       <ButtonPlay image={play} />

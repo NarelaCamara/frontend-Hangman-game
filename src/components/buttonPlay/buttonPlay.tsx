@@ -1,3 +1,4 @@
+import "./styles.css";
 export const ButtonPlay = ({ image }: { image: string }) => {
   return (
     <div className="buttonPlay">
