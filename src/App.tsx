@@ -9,6 +9,14 @@ import { ButtonPlay } from "./components/buttonPlay/buttonPlay";
 import { Button } from "./components/button/button";
 
 function App() {
+  const steps = [
+    {
+      title: "Choose a category",
+      step: 1,
+      description:
+        "First, choose a word category, like animals or movies. The computer then randomly selects a secret word from that topic and shows you blanks for each letter of the word.",
+    },
+  ];
   return (
     <div>
       <Title />
@@ -16,7 +24,10 @@ function App() {
       <ButtonPlay image={play} />
       <Menu image={menu} />
       <Letter letter="A" />
-      <Card />
+
+      {steps.map((e) => (
+        <Card title={e.title} step={e.step} description={e.description} />
+      ))}
     </div>
   );
 }

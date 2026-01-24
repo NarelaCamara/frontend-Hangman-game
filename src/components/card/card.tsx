@@ -1,5 +1,19 @@
 import "./styles.css";
 
-export const Card = () => {
-  return <div>card</div>;
+export const Card = ({
+  title,
+  step,
+  description,
+}: {
+  title: string;
+  step: number;
+  description: string;
+}) => {
+  return (
+    <div>
+      <h2>{step}</h2>
+      <h1>{title}</h1>
+      <p>{description}</p>
+    </div>
+  );
 };
