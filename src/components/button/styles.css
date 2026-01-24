@@ -1,0 +1,8 @@
+.button {
+  padding: 40px;
+  background-color: blueviolet;
+}
+
+.button__image {
+  height: auto;
+}
