@@ -10,7 +10,7 @@ export const Card = ({
   description: string;
 }) => {
   return (
-    <div>
+    <div className="card">
       <h2>{step}</h2>
       <h1>{title}</h1>
       <p>{description}</p>

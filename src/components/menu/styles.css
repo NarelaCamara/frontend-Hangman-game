@@ -1,4 +1,16 @@
 .menu {
   background-color: rgb(255, 153, 0);
+  border-radius: 50%;
+  height: 94px;
+  width: 94px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu__image {
   padding: 20px;
+  height: 38px;
+  width: 41px;
 }

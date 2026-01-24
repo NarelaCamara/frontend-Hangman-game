@@ -1,4 +1,7 @@
 .letter {
   background-color: rgb(255, 225, 0);
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
