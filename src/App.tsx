@@ -2,6 +2,7 @@ import "./App.css";
 import { Title } from "./components/title/title";
 import { Menu } from "./components/menu/menu";
 import play from "./assets/images/icon-play.svg";
+import heart from "./assets/images/icon-heart.svg";
 import menu from "./assets/images/icon-menu.svg";
 import { Card } from "./components/card/card";
 import { Letter } from "./components/letter/letter";
@@ -38,21 +39,29 @@ function App() {
       <Title />
       <Button text="How to play" />
       <ButtonPlay image={play} />
-      <Menu image={menu} />
 
-      <div className="game_letters">
+      <div className="game__menu">
+        <Menu image={menu} />
+        <h1 className="game__menu_categorie">
+          {String("Categorie").toLocaleUpperCase()}
+        </h1>
+      </div>
+
+      <img src={heart} className="game__heart" />
+
+      <div className="game__letters">
         {words.map((e) => (
           <Letter letter={e} />
         ))}
       </div>
 
-      <div className="game_letters">
+      <div className="game__letters">
         {letters.map((e) => (
           <Letter letter={e} />
         ))}
       </div>
 
-      <div className="game_steps">
+      <div className="game__steps">
         {steps.map((e) => (
           <Card title={e.title} step={e.step} description={e.description} />
         ))}

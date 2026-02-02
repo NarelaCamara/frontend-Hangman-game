@@ -4,17 +4,37 @@
   background-color: palevioletred;
 }
 
-.game_steps {
+.game__steps {
   display: flex;
   flex-direction: row;
   padding: 20px;
 }
 
-.game_letters {
+.game__letters {
   display: flex;
   flex-direction: row;
   gap: 1.5rem;
   flex-wrap: wrap;
   justify-content: center;
   padding: 2%;
+}
+
+.game__heart {
+  padding: 2%;
+}
+
+.game__menu {
+  display: flex;
+  flex-direction: row;
+  padding: 2%;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 2%;
+}
+
+.game__menu_categorie {
+  color: white;
+  font-weight: 200;
+  font-size: 4.5rem;
 }
