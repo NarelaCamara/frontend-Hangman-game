@@ -13,5 +13,8 @@
 .game_letters {
   display: flex;
   flex-direction: row;
-  gap: 4rem;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2%;
 }

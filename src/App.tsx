@@ -32,12 +32,19 @@ function App() {
 
   const letters = "abcdefghijklmnñopqrstuvwxyz".split("");
 
+  const words = "The lion king".split("");
   return (
     <div className="game">
       <Title />
       <Button text="How to play" />
       <ButtonPlay image={play} />
       <Menu image={menu} />
+
+      <div className="game_letters">
+        {words.map((e) => (
+          <Letter letter={e} />
+        ))}
+      </div>
 
       <div className="game_letters">
         {letters.map((e) => (
