@@ -8,6 +8,7 @@ import { Card } from "./components/card/card";
 import { Letter } from "./components/letter/letter";
 import { ButtonPlay } from "./components/buttonPlay/buttonPlay";
 import { Button } from "./components/button/button";
+import Timer from "./components/timer/timer";
 
 function App() {
   const steps = [
@@ -36,18 +37,24 @@ function App() {
   const words = "The lion king".split("");
   return (
     <div className="game">
+      <div className="game__navigation">
+        <div className="game__menu">
+          <Menu image={menu} />
+          <h1 className="game__menu_categorie">
+            {String("Categorie").toLocaleUpperCase()}
+          </h1>
+        </div>
+        <Timer totalTimeInSeconds={15} />
+        <img src={heart} className="game__heart" />
+        <img src={heart} className="game__heart" />
+        <img src={heart} className="game__heart" />
+        <img src={heart} className="game__heart" />
+        <img src={heart} className="game__heart" />
+      </div>
+
       <Title />
       <Button text="How to play" />
       <ButtonPlay image={play} />
-
-      <div className="game__menu">
-        <Menu image={menu} />
-        <h1 className="game__menu_categorie">
-          {String("Categorie").toLocaleUpperCase()}
-        </h1>
-      </div>
-
-      <img src={heart} className="game__heart" />
 
       <div className="game__letters">
         {words.map((e) => (
