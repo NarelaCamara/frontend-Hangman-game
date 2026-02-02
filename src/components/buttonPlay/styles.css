@@ -6,6 +6,8 @@
   align-items: center;
   height: 200px;
   width: 200px;
+  border-radius: 100%;
+  border-color: black;
 }
 .buttonPlay__image {
   height: 52px;

@@ -29,13 +29,21 @@ function App() {
         "First, choose a word category, like animals or movies. The computer then randomly selects a secret word from that topic and shows you blanks for each letter of the word.",
     },
   ];
+
+  const letters = "abcdefghijklmnñopqrstuvwxyz".split("");
+
   return (
     <div className="game">
       <Title />
       <Button text="How to play" />
       <ButtonPlay image={play} />
       <Menu image={menu} />
-      <Letter letter="A" />
+
+      <div className="game_letters">
+        {letters.map((e) => (
+          <Letter letter={e} />
+        ))}
+      </div>
 
       <div className="game_steps">
         {steps.map((e) => (

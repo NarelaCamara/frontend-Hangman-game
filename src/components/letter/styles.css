@@ -4,4 +4,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-radius: 40%;
+  font-size: 120%;
+  width: fit-content;
+  padding: 2.5em 4.5em;
 }
