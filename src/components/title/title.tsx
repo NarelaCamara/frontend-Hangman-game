@@ -1,4 +1,5 @@
 import logo from "../../assets/images/logo.svg";
+import "./styles.css";
 
 export const Title = () => {
   return (

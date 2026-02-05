@@ -1,6 +1,10 @@
+.position-button-play {
+  display: flex;
+}
+
 .buttonPlay {
   box-sizing: border-box;
-  position: absolute;
+  position: relative;
   left: 0%;
   right: 0%;
   top: 0%;
@@ -15,9 +19,6 @@
 }
 
 .buttonPlay__image {
-  
-  /* Vector 7 */
-
   position: absolute;
   left: 33.96%;
   right: 33.02%;

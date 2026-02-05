@@ -3,8 +3,13 @@
   background-color: palevioletred;
   min-height: 100vh;
   width: 100%;
+}
+
+.game__center {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  padding-top: 12vh;
 }
 
 /* mobile  */
