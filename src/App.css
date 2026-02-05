@@ -19,8 +19,11 @@
   padding: 2%;
 }
 
-.game__heart {
-  padding: 2%;
+.game__hearts {
+  max-width: 20vw;
+  display: flex;
+  flex-direction: row;
+  gap: 2%;
 }
 
 .game__menu {

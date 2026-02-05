@@ -45,11 +45,12 @@ function App() {
           </h1>
         </div>
         <Timer totalTimeInSeconds={15} />
-        <img src={heart} className="game__heart" />
-        <img src={heart} className="game__heart" />
-        <img src={heart} className="game__heart" />
-        <img src={heart} className="game__heart" />
-        <img src={heart} className="game__heart" />
+
+        <div className="game__hearts">
+          {Array.from({ length: 5 }, (_, index) => (
+            <img src={heart} key={index} className="game__heart" />
+          ))}
+        </div>
       </div>
 
       <Title />
