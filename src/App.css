@@ -4,11 +4,6 @@
   background-color: palevioletred;
 }
 
-.game__steps {
-  display: flex;
-  flex-direction: row;
-  padding: 20px;
-}
 
 .game__letters {
   display: flex;
