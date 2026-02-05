@@ -16,7 +16,7 @@ function App() {
   const [route, setRoute] = useState(routes.Home);
 
   return (
-    <div className="game">
+    <div className="game bg">
       {route === routes.Home && <Home setRoute={setRoute} />}
       {route === routes.Categories && <Categorie setRoute={setRoute} />}
       {route === routes.game && (
