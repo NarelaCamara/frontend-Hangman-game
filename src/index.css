@@ -1,5 +1,4 @@
 :root {
-  /* Aquí solo definimos variables */
   --font-main: "Mouse Memoirs", sans-serif;
 }
 
@@ -10,7 +9,7 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  
+
   /* Mobile first */
   background-image: url("/background-mobile.svg");
   background-size: cover;

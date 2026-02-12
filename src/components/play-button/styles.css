@@ -1,8 +1,8 @@
-.position-button-play {
+.play {
   display: flex;
 }
 
-.buttonPlay {
+.play__button {
   box-sizing: border-box;
   position: relative;
   left: 0%;
@@ -18,7 +18,7 @@
   width: 12.5rem;
 }
 
-.buttonPlay__image {
+.play__button__image {
   position: absolute;
   left: 33.96%;
   right: 33.02%;

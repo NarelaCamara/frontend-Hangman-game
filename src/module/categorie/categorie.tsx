@@ -1,3 +1,4 @@
+import { routes } from "../../utils/utils";
 import "./styles.css";
 
 export const Categorie = ({
@@ -5,5 +6,20 @@ export const Categorie = ({
 }: {
   setRoute: (route: string) => void;
 }) => {
-  return <div className="categories"></div>;
+  const categories = [
+    "Movies",
+    "Tv Shows",
+    "Countries",
+    "Capital Cities",
+    "Animals",
+    "Sports",
+  ];
+
+  return (
+    <div className="categories">
+      {categories.map((e) => (
+        <div onClick={() => setRoute(routes.game)}>{e}</div>
+      ))}
+    </div>
+  );
 };

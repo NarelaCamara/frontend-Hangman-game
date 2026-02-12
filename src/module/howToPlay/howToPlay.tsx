@@ -1,4 +1,5 @@
 import { Card } from "../../components/card/card";
+import { routes } from "../../utils/utils";
 import "./styles.css";
 
 export const HowToPlay = ({
@@ -28,6 +29,7 @@ export const HowToPlay = ({
   ];
   return (
     <div className="steps">
+      <div onClick={() => setRoute(routes.Menu)}>Back</div>
       {steps.map((e) => (
         <Card title={e.title} step={e.step} description={e.description} />
       ))}

@@ -1,5 +1,5 @@
 import play from "../../assets/images/icon-play.svg";
-import { ButtonPlay } from "../../components/buttonPlay/buttonPlay";
+import { PlayButton } from "../../components/PlayButton/PlayButton";
 import { Title } from "../../components/title/title";
 import { Button } from "../../components/button/button";
 import { routes } from "../../utils/utils";
@@ -9,7 +9,7 @@ export const Menu = ({ setRoute }: { setRoute: (route: string) => void }) => {
   return (
     <div className="menu">
       <Title />
-      <ButtonPlay image={play} onClick={() => setRoute(routes.game)} />
+      <PlayButton image={play} onClick={() => setRoute(routes.game)} />
       <Button text="How to play" />
     </div>
   );

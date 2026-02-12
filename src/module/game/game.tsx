@@ -1,9 +1,8 @@
 import { Letter } from "../../components/letter/letter";
 import Timer from "../../components/timer/timer";
-import "./styles.css";
-import menu from "../../assets/images/icon-menu.svg";
 import heart from "../../assets/images/icon-heart.svg";
 import { Menu } from "../../components/menu/menu";
+import "./styles.css";
 
 export const Game = ({
   word,
@@ -20,7 +19,7 @@ export const Game = ({
     <div className="game">
       <div className="game__navigation">
         <div className="game__menu">
-          <Menu image={menu} />
+          <Menu setRoute={setRoute} />
           <h1 className="game__menu_categorie">
             {String("Categorie").toLocaleUpperCase()}
           </h1>

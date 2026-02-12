@@ -1,16 +1,14 @@
 .menu {
-  background-color: rgb(255, 153, 0);
-  border-radius: 50%;
-  height: 5.875rem;
-  width: 5.875rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-}
-
-.menu__image {
+  background: linear-gradient(180deg, #344aba 0%, rgba(0, 20, 121, 0.8) 100%);
+  box-shadow:
+    inset 0px -8px 0px 4px #140e66,
+    inset 0px 6px 0px 8px #2463ff;
+  border-radius: 4.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 1.25rem;
-  height: 2.375rem;
-  width: 2.563rem;
 }
