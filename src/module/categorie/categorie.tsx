@@ -1,3 +1,4 @@
+import { ButtonBlue } from "../../components/button-blue/button-blue";
 import { NavTitleButton } from "../../components/nav-title-button/nav-title-button";
 import { routes } from "../../utils/utils";
 import "./styles.css";
@@ -21,7 +22,7 @@ export const Categorie = ({
       <NavTitleButton text="categories" onClick={() => setRoute(routes.Menu)} />
       <div className="categories__options">
         {categories.map((e) => (
-          <div onClick={() => setRoute(routes.game)}>{e}</div>
+          <ButtonBlue onClick={() => setRoute(routes.game)} text={e} />
         ))}
       </div>
     </div>

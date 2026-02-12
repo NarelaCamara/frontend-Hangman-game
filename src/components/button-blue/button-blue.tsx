@@ -1,6 +1,6 @@
 import "./styles.css";
 
-export const Button = ({
+export const ButtonBlue = ({
   text,
   onClick,
 }: {

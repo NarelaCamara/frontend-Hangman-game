@@ -1,16 +1,15 @@
-import play from "../../assets/images/icon-play.svg";
-import { PlayButton } from "../../components/PlayButton/PlayButton";
 import { Title } from "../../components/title/title";
-import { Button } from "../../components/button-blue/button-blue";
 import { routes } from "../../utils/utils";
 import "./styles.css";
+import { PlayButton } from "../../components/play-button/play-button";
+import { ButtonBlue } from "../../components/button-blue/button-blue";
 
 export const Menu = ({ setRoute }: { setRoute: (route: string) => void }) => {
   return (
     <div className="menu">
       <Title />
-      <PlayButton image={play} onClick={() => setRoute(routes.game)} />
-      <Button text="How to play" />
+      <PlayButton onClick={() => setRoute(routes.Categories)} />
+      <ButtonBlue text="How to play" onClick={() => setRoute(routes.game)} />
     </div>
   );
 };
