@@ -1,10 +1,4 @@
 .home {
-  /* Background Container */
-
-  width: 37rem;
-  height: 31.25rem;
-
-  /* colors/gradient/1 */
   background: linear-gradient(180deg, #344aba 0%, rgba(0, 20, 121, 0.8) 100%);
   box-shadow:
     inset 0px -8px 0px 4px #140e66,
