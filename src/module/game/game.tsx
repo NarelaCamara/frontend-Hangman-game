@@ -17,7 +17,7 @@ export const Game = ({
   const word_array = word.split("");
 
   return (
-    <div>
+    <div className="game">
       <div className="game__navigation">
         <div className="game__menu">
           <Menu image={menu} />

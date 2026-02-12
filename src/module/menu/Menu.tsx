@@ -5,9 +5,9 @@ import { Button } from "../../components/button/button";
 import { routes } from "../../utils/utils";
 import "./styles.css";
 
-export const Home = ({ setRoute }: { setRoute: (route: string) => void }) => {
+export const Menu = ({ setRoute }: { setRoute: (route: string) => void }) => {
   return (
-    <div className="home">
+    <div className="menu">
       <Title />
       <ButtonPlay image={play} onClick={() => setRoute(routes.game)} />
       <Button text="How to play" />

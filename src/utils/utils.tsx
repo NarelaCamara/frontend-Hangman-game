@@ -1,5 +1,5 @@
 export const routes = {
-  Home: "Inicio",
+  Menu: "menu",
   game: "Game",
   Steps: "Steps",
   Categories: "Catergories",
