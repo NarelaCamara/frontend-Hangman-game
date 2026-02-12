@@ -5,8 +5,8 @@
   justify-content: center;
   align-items: center;
   border-radius: 10%;
-  padding: 60px 48px;
-  width: 348px;
-  height: 550px;
-  margin: 20px;
+  padding: 1.5rem;
+  max-width: 21.75rem;
+  max-height: 34.375rem;
+  margin: 1rem;
 }

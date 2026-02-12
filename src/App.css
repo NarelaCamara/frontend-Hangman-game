@@ -15,7 +15,7 @@
 /* mobile  */
 .bg {
   background-image: url("/background-mobile.svg");
-  background-size: auto !important;
+  background-size: cover !important;
   background-repeat: no-repeat;
 }
 
@@ -23,7 +23,7 @@
 @media (min-width: 768px) {
   .bg {
     background-image: url("/background-tablet.svg");
-    background-size: auto !important;
+    background-size: cover !important;
     background-repeat: no-repeat;
   }
 }

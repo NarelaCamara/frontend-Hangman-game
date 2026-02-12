@@ -1,8 +1,8 @@
 .menu {
   background-color: rgb(255, 153, 0);
   border-radius: 50%;
-  height: 94px;
-  width: 94px;
+  height: 5.875rem;
+  width: 5.875rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,7 +10,7 @@
 }
 
 .menu__image {
-  padding: 20px;
-  height: 38px;
-  width: 41px;
+  padding: 1.25rem;
+  height: 2.375rem;
+  width: 2.563rem;
 }
