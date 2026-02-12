@@ -1,9 +1,5 @@
 .button {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin: 0.5rem 4rem;
+  margin: 1.5rem;
   background: #2463ff;
   box-shadow:
     inset 0px -2px 0px 3px #140e66,
@@ -13,6 +9,7 @@
 
 .button__text {
   color: white;
-  font-size: 2rem;
-  margin: 1rem 4rem;
+  font-size: 1.7rem;
+  padding: 0.2rem 3.5rem;
+  white-space: nowrap;
 }

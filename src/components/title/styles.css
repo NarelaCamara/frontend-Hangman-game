@@ -1,2 +1,12 @@
 .title {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  position: relative;
+  top: 3rem;
+}
+
+.title__image {
+  height: 6.5rem;
 }

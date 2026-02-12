@@ -1,12 +1,10 @@
+import { ButtonViolet } from "../../components/button-violet/button-violet";
 import { Card } from "../../components/card/card";
 import { routes } from "../../utils/utils";
+
 import "./styles.css";
 
-export const HowToPlay = ({
-  setRoute,
-}: {
-  setRoute: (route: string) => void;
-}) => {
+export const Steps = ({ setRoute }: { setRoute: (route: string) => void }) => {
   const steps = [
     {
       title: "Choose a category",
@@ -28,11 +26,13 @@ export const HowToPlay = ({
     },
   ];
   return (
-    <div className="steps">
-      <div onClick={() => setRoute(routes.Menu)}>Back</div>
-      {steps.map((e) => (
-        <Card title={e.title} step={e.step} description={e.description} />
-      ))}
+    <div>
+      <ButtonViolet name="Back" onClick={() => setRoute(routes.Menu)} />
+      <div className="steps">
+        {steps.map((e) => (
+          <Card title={e.title} step={e.step} description={e.description} />
+        ))}
+      </div>
     </div>
   );
 };

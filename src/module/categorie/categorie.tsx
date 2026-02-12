@@ -1,3 +1,4 @@
+import { ButtonViolet } from "../../components/button-violet/button-violet";
 import { routes } from "../../utils/utils";
 import "./styles.css";
 
@@ -16,10 +17,13 @@ export const Categorie = ({
   ];
 
   return (
-    <div className="categories">
-      {categories.map((e) => (
-        <div onClick={() => setRoute(routes.game)}>{e}</div>
-      ))}
+    <div>
+      <ButtonViolet name="Back" onClick={() => setRoute(routes.Menu)} />
+      <div className="categories">
+        {categories.map((e) => (
+          <div onClick={() => setRoute(routes.game)}>{e}</div>
+        ))}
+      </div>
     </div>
   );
 };

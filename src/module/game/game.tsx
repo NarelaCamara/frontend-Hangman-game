@@ -1,8 +1,9 @@
 import { Letter } from "../../components/letter/letter";
 import Timer from "../../components/timer/timer";
 import heart from "../../assets/images/icon-heart.svg";
-import { Menu } from "../../components/menu/menu";
 import "./styles.css";
+import { ButtonViolet } from "../../components/button-violet/button-violet";
+import { routes } from "../../utils/utils";
 
 export const Game = ({
   word,
@@ -19,8 +20,8 @@ export const Game = ({
     <div className="game">
       <div className="game__navigation">
         <div className="game__menu">
-          <Menu setRoute={setRoute} />
           <h1 className="game__menu_categorie">
+            <ButtonViolet name="Menu" onClick={() => setRoute(routes.Menu)} />
             {String("Categorie").toLocaleUpperCase()}
           </h1>
         </div>
