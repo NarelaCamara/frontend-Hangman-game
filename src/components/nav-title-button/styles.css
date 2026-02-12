@@ -1,20 +1,8 @@
-.steps {
-  padding: 2rem;
-}
-
-.steps__cards {
-  display: flex;
-  flex-direction: row;
-  padding: 1.25rem;
-}
-
-.steps__nav {
+.nav {
   display: flex;
   align-items: center;
 }
-.steps__nav__title {
-  /* Header Title */
-
+.nav__title {
   margin: 0 auto;
   width: 338px;
   height: 125px;
@@ -39,4 +27,5 @@
   flex: none;
   order: 1;
   flex-grow: 0;
+  white-space: nowrap;
 }

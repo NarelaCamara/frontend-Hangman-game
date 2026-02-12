@@ -1,5 +1,5 @@
-import { ButtonViolet } from "../../components/button-violet/button-violet";
 import { Card } from "../../components/card/card";
+import { NavTitleButton } from "../../components/nav-title-button/nav-title-button";
 import { routes } from "../../utils/utils";
 
 import "./styles.css";
@@ -26,9 +26,12 @@ export const Steps = ({ setRoute }: { setRoute: (route: string) => void }) => {
     },
   ];
   return (
-    <div>
-      <ButtonViolet name="Back" onClick={() => setRoute(routes.Menu)} />
-      <div className="steps">
+    <div className="steps">
+      <NavTitleButton
+        text="How to play"
+        onClick={() => setRoute(routes.Menu)}
+      />
+      <div className="steps__cards">
         {steps.map((e) => (
           <Card title={e.title} step={e.step} description={e.description} />
         ))}

@@ -1,7 +1,7 @@
 .button__violet {
   /* Back Button Background */
   box-sizing: border-box;
-  position: absolute;
+  position: relative;
   width: 94px;
   height: 94px;
   left: 0px;
@@ -14,4 +14,9 @@
 }
 
 .button__violet__image {
+  position: relative;
+  width: 41px;
+  height: 38px;
+  left: 27px;
+  top: 22px;
 }
