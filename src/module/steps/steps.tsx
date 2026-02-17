@@ -4,7 +4,7 @@ import { routes } from "../../utils/utils";
 
 import "./styles.css";
 
-export const Steps = ({ setRoute }: { setRoute: (route: string) => void }) => {
+export const Steps = ({ setRoute }: { setRoute: (route: routes) => void }) => {
   const steps = [
     {
       title: "Choose a category",

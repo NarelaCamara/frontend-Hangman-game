@@ -3,13 +3,18 @@ import "./styles.css";
 
 export const Timer = ({
   totalTimeInSeconds,
+  endTime,
 }: {
   totalTimeInSeconds: number;
+  endTime: () => void;
 }) => {
   const [timeLeft, setTimeLeft] = useState(totalTimeInSeconds);
 
   useEffect(() => {
-    if (timeLeft <= 0) return;
+    if (timeLeft <= 0) {
+      endTime();
+      return;
+    }
 
     const interval = setInterval(() => {
       setTimeLeft((prev) => prev - 1);

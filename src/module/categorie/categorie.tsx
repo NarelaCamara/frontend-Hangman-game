@@ -5,8 +5,10 @@ import "./styles.css";
 
 export const Categorie = ({
   setRoute,
+  setSelected,
 }: {
-  setRoute: (route: string) => void;
+  setRoute: (route: routes) => void;
+  setSelected: (category: string) => void;
 }) => {
   const categories = [
     "Movies",
@@ -25,7 +27,14 @@ export const Categorie = ({
       />
       <div className="categories__options">
         {categories.map((e) => (
-          <ButtonBlue onClick={() => setRoute(routes.game)} text={e} />
+          <ButtonBlue
+            key={e}
+            onClick={() => {
+              setRoute(routes.Game);
+              setSelected(e);
+            }}
+            text={e}
+          />
         ))}
       </div>
     </div>

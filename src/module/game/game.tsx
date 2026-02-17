@@ -1,72 +1,85 @@
-import { Letter } from "../../components/letter/letter";
 import heart from "../../assets/images/icon-heart.svg";
+import { Letter } from "../../components/letter/letter";
 import { NavTitleButton } from "../../components/nav-title-button/nav-title-button";
-import { useState } from "react";
-import { Menu } from "../../components/menu/menu";
+import { useEffect, useState } from "react";
 import { Timer } from "../../components/timer/timer";
-import { state } from "../../utils/utils";
+import { LIST_WORDS, routes, STATE } from "../../utils/utils";
 import "./styles.css";
 
 export const Game = ({
-  word,
+  category,
+  setPlay,
+  setWin,
   setRoute,
 }: {
-  word: string;
-  setRoute: (route: string) => void;
+  category: string;
+  setRoute: (route: routes) => void;
+  setWin: (route: boolean) => void;
+  setPlay: (route: STATE) => void;
 }) => {
   const letters = "abcdefghijklmnñopqrstuvwxyz".split("");
+  const [words, setWords] = useState<Array<string>>([]);
 
-  const word_array = word.split("");
+  const [game, setGame] = useState({
+    location: 0,
+    word_array: [""],
+    lifes: 5,
+    time: 15,
+  });
 
-  const [play, setPlay] = useState(state.START);
-
-  const [win, setWin] = useState(false);
+  useEffect(() => {
+    if (category) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setWords(LIST_WORDS);
+      const letters_word: string = LIST_WORDS[0];
+      console.log("letters_word", letters_word);
+      setGame({
+        ...game,
+        word_array: letters_word.split(""),
+      });
+    }
+  }, []);
 
   return (
     <div>
-      {play === state.START && (
-        <div className="game">
-          <div className="game__menu">
-            <NavTitleButton
-              text="Category"
-              type="Menu"
-              onClick={() => {
-                console.log("tu vijera:");
-                setPlay(state.PAUSE);
-              }}
-            />
+      <div className="game">
+        <div className="game__menu">
+          <NavTitleButton
+            text="Category"
+            type="Menu"
+            onClick={() => {
+              setPlay(STATE.PAUSE);
+              setRoute(routes.Menu);
+            }}
+          />
 
-            <Timer totalTimeInSeconds={15} />
+          <Timer
+            totalTimeInSeconds={game.time}
+            endTime={() => {
+              setWin(false);
+              setPlay(STATE.END);
+              setRoute(routes.Menu);
+            }}
+          />
 
-            <div className="game__menu__hearts">
-              {Array.from({ length: 5 }, (_, index) => (
-                <img src={heart} key={index} className="game__menu__heart" />
-              ))}
-            </div>
-          </div>
-
-          <div className="game__words">
-            {word_array.map((e) => (
-              <Letter letter={e} />
-            ))}
-          </div>
-          <div className="game__letters">
-            {letters.map((e) => (
-              <Letter letter={e} />
+          <div className="game__menu__hearts">
+            {Array.from({ length: game.lifes }, (_, index) => (
+              <img src={heart} key={index} className="game__menu__heart" />
             ))}
           </div>
         </div>
-      )}
 
-      {(play === state.PAUSE || play === state.END) && (
-        <Menu
-          title={
-            play === state.PAUSE ? "Pause" : win ? "Winnnerrrr" : "Looooseerrrr"
-          }
-          setRoute={setRoute}
-          state={play === state.PAUSE ? "Pause" : "End"}
-        />
-      )}
+        <div className="game__words">
+          {game.word_array.map((e) => (
+            <Letter letter={e} />
+          ))}
+        </div>
+        <div className="game__letters">
+          {letters.map((e) => (
+            <Letter letter={e} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

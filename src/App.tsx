@@ -2,19 +2,32 @@ import "./App.css";
 import { Game } from "./module/game/game";
 import { useState } from "react";
 import { Categorie } from "./module/categorie/categorie";
-import { routes } from "./utils/utils";
+import { routes, STATE } from "./utils/utils";
 import { Menu } from "./components/menu/menu";
 import { Steps } from "./module/steps/steps";
 
 function App() {
   const [route, setRoute] = useState(routes.Menu);
+  const [play, setPlay] = useState(STATE.START);
+
+  const [selected, setSelected] = useState("");
+  const [win, setWin] = useState(false);
 
   return (
     <div className="app">
-      {route === routes.Menu && <Menu state="Menu" setRoute={setRoute} />}
-      {route === routes.Categories && <Categorie setRoute={setRoute} />}
-      {route === routes.game && (
-        <Game word="The lion king" setRoute={setRoute} />
+      {route === routes.Menu && (
+        <Menu state={play} win={win} setRoute={setRoute} setPlay={setPlay} />
+      )}
+      {route === routes.Categories && (
+        <Categorie setRoute={setRoute} setSelected={setSelected} />
+      )}
+      {route === routes.Game && (
+        <Game
+          category={selected}
+          setPlay={setPlay}
+          setWin={setWin}
+          setRoute={setRoute}
+        />
       )}
       {route === routes.Steps && <Steps setRoute={setRoute} />}
     </div>

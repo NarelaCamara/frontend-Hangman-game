@@ -1,12 +1,15 @@
-export const routes = {
-  Menu: "menu",
-  game: "Game",
-  Steps: "Steps",
-  Categories: "Catergories",
-};
+export enum routes {
+  "Menu",
+  "Game",
+  "Steps",
+  "Categories",
+}
 
-export const state = {
-  START: "START",
-  PAUSE: "PAUSE",
-  END: "END",
-};
+export enum STATE {
+  "START",
+  "PLAYING",
+  "PAUSE",
+  "END",
+}
+
+export const LIST_WORDS = ["Tu vierja", "Nose", "qiuo", "Esfdsf", "wqwawda"];
