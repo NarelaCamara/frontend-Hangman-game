@@ -1,44 +1,30 @@
 import heart from "../../assets/images/icon-heart.svg";
 import { Letter } from "../../components/letter/letter";
 import { NavTitleButton } from "../../components/nav-title-button/nav-title-button";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Timer } from "../../components/timer/timer";
-import { LIST_WORDS, routes, STATE } from "../../utils/utils";
+import { routes, STATE } from "../../utils/utils";
 import "./styles.css";
 
 export const Game = ({
-  category,
+  words,
   setPlay,
   setWin,
   setRoute,
 }: {
-  category: string;
+  words: string[];
   setRoute: (route: routes) => void;
   setWin: (route: boolean) => void;
   setPlay: (route: STATE) => void;
 }) => {
   const letters = "abcdefghijklmnñopqrstuvwxyz".split("");
-  const [words, setWords] = useState<Array<string>>([]);
+  const [lettersClicked, setLettersClicked] = useState([""]);
 
   const [game, setGame] = useState({
     location: 0,
-    word_array: [""],
     lifes: 5,
-    time: 15,
+    time: 15000000000000000,
   });
-
-  useEffect(() => {
-    if (category) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      setWords(LIST_WORDS);
-      const letters_word: string = LIST_WORDS[0];
-      console.log("letters_word", letters_word);
-      setGame({
-        ...game,
-        word_array: letters_word.split(""),
-      });
-    }
-  }, []);
 
   return (
     <div>
@@ -70,13 +56,43 @@ export const Game = ({
         </div>
 
         <div className="game__words">
-          {game.word_array.map((e) => (
-            <Letter letter={e} />
+          {words[game.location].split("").map((e) => (
+            <Letter
+              letter={e}
+              show={lettersClicked.some(
+                (i) => String(i).toLowerCase() === String(e).toLowerCase(),
+              )}
+              onClick={() => {}}
+            />
           ))}
         </div>
         <div className="game__letters">
           {letters.map((e) => (
-            <Letter letter={e} />
+            <Letter
+              letter={e}
+              show={true}
+              onClick={(e: string) => {
+                const array_letters = words[game.location].split("");
+
+                //no ha sido clickeada esa letra
+                if (
+                  !lettersClicked.some(
+                    (i) => String(i).toLowerCase() === String(e).toLowerCase(),
+                  )
+                ) {
+                  setLettersClicked([...lettersClicked, e]);
+                  //no pertenece letra a la palabra
+                  if (
+                    !array_letters.some(
+                      (i) =>
+                        String(i).toLowerCase() === String(e).toLowerCase(),
+                    )
+                  ) {
+                    setGame({ ...game, lifes: game.lifes - 1 });
+                  }
+                }
+              }}
+            />
           ))}
         </div>
       </div>

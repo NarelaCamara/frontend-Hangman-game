@@ -2,7 +2,7 @@ import "./App.css";
 import { Game } from "./module/game/game";
 import { useState } from "react";
 import { Categorie } from "./module/categorie/categorie";
-import { routes, STATE } from "./utils/utils";
+import { LIST_WORDS, routes, STATE } from "./utils/utils";
 import { Menu } from "./components/menu/menu";
 import { Steps } from "./module/steps/steps";
 
@@ -23,7 +23,7 @@ function App() {
       )}
       {route === routes.Game && (
         <Game
-          category={selected}
+          words={LIST_WORDS}
           setPlay={setPlay}
           setWin={setWin}
           setRoute={setRoute}
