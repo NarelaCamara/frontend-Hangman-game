@@ -14,12 +14,27 @@ export const Menu = ({
   title?: string;
 }) => {
   return (
-    <div>
+    <div className="menu">
       {state === "Menu" && <Title />}
-      {state !== "Menu" && <h1>{title}</h1>}
-      <div className="menu">
-        <PlayButton onClick={() => setRoute(routes.Categories)} />
-        <ButtonBlue text="How to play" onClick={() => setRoute(routes.Steps)} />
+      {state !== "Menu" && <h1 className="menu__title">{title}</h1>}
+      <div className="menu__modal">
+        {state === "Menu" && (
+          <>
+            <PlayButton onClick={() => setRoute(routes.Categories)} />
+            <ButtonBlue
+              text="How to play"
+              onClick={() => setRoute(routes.Steps)}
+            />
+          </>
+        )}
+
+        {(state === "Pause" || state === "End") && (
+          <>
+            <button>{state === "Pause" ? "Continue" : "Play Again!"}</button>
+            <button>New Categorie</button>
+            <button>Quit Game</button>
+          </>
+        )}
       </div>
     </div>
   );
