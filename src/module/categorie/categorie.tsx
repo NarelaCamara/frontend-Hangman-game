@@ -19,7 +19,10 @@ export const Categorie = ({
 
   return (
     <div className="categories">
-      <NavTitleButton text="Pick a category" onClick={() => setRoute(routes.Menu)} />
+      <NavTitleButton
+        text="Pick a category"
+        onClick={() => setRoute(routes.Menu)}
+      />
       <div className="categories__options">
         {categories.map((e) => (
           <ButtonBlue onClick={() => setRoute(routes.game)} text={e} />

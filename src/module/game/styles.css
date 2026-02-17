@@ -26,4 +26,5 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 10vh 1vw;
 }

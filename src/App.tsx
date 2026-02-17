@@ -10,7 +10,7 @@ function App() {
   const [route, setRoute] = useState(routes.Menu);
 
   return (
-    <div>
+    <div className="app">
       {route === routes.Menu && <Menu state="Menu" setRoute={setRoute} />}
       {route === routes.Categories && <Categorie setRoute={setRoute} />}
       {route === routes.game && (
