@@ -4,3 +4,9 @@ export const routes = {
   Steps: "Steps",
   Categories: "Catergories",
 };
+
+export const state = {
+  START: "START",
+  PAUSE: "PAUSE",
+  END: "END",
+};

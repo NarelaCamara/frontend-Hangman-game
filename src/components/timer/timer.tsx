@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
 import "./styles.css";
 
-const Timer = ({ totalTimeInSeconds }: { totalTimeInSeconds: number }) => {
+export const Timer = ({
+  totalTimeInSeconds,
+}: {
+  totalTimeInSeconds: number;
+}) => {
   const [timeLeft, setTimeLeft] = useState(totalTimeInSeconds);
 
   useEffect(() => {
@@ -24,5 +28,3 @@ const Timer = ({ totalTimeInSeconds }: { totalTimeInSeconds: number }) => {
     </div>
   );
 };
-
-export default Timer;

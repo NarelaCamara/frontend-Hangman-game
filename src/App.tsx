@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div>
-      {route === routes.Menu && <Menu setRoute={setRoute} />}
+      {route === routes.Menu && <Menu state="Menu" setRoute={setRoute} />}
       {route === routes.Categories && <Categorie setRoute={setRoute} />}
       {route === routes.game && (
         <Game word="The lion king" setRoute={setRoute} />

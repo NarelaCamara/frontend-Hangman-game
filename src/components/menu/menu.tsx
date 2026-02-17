@@ -4,10 +4,19 @@ import { PlayButton } from "../play-button/play-button";
 import { Title } from "../title/title";
 import "./styles.css";
 
-export const Menu = ({ setRoute }: { setRoute: (route: string) => void }) => {
+export const Menu = ({
+  setRoute,
+  title = "",
+  state,
+}: {
+  setRoute: (route: string) => void;
+  state: "Pause" | "End" | "Menu";
+  title?: string;
+}) => {
   return (
     <div>
-      <Title />
+      {state === "Menu" && <Title />}
+      {state !== "Menu" && <h1>{title}</h1>}
       <div className="menu">
         <PlayButton onClick={() => setRoute(routes.Categories)} />
         <ButtonBlue text="How to play" onClick={() => setRoute(routes.Steps)} />
