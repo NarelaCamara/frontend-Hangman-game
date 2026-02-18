@@ -3,16 +3,20 @@ import { Letter } from "../../components/letter/letter";
 import { NavTitleButton } from "../../components/nav-title-button/nav-title-button";
 import { useState } from "react";
 import { Timer } from "../../components/timer/timer";
-import { routes, STATE } from "../../utils/utils";
+import { routes, STATE, type IGame } from "../../utils/utils";
 import "./styles.css";
 
 export const Game = ({
+  game,
   words,
+  setGame,
   setPlay,
   setWin,
   setRoute,
 }: {
+  game: IGame;
   words: string[];
+  setGame: (route: IGame) => void;
   setRoute: (route: routes) => void;
   setWin: (route: boolean) => void;
   setPlay: (route: STATE) => void;
@@ -20,14 +24,10 @@ export const Game = ({
   const letters = "abcdefghijklmnñopqrstuvwxyz".split("");
   const [lettersClicked, setLettersClicked] = useState([""]);
 
-  const [game, setGame] = useState({
-    location: 0,
-    total: words.length,
-    lifes: 5,
-    time: 150,
-  });
-
-  console.log(game);
+  const array_letters = String(words[game.location])
+    .toLowerCase()
+    .split("")
+    .filter((e) => e !== " ");
 
   return (
     <div>
@@ -62,12 +62,11 @@ export const Game = ({
         </div>
 
         <div className="game__words">
-          {words[game.location].split("").map((e) => (
+          {words[game.location].split("").map((e, i) => (
             <Letter
+              key={i}
               letter={e}
-              show={lettersClicked.some(
-                (i) => String(i).toLowerCase() === String(e).toLowerCase(),
-              )}
+              show={lettersClicked.some((i) => i === e)}
               onClick={() => {}}
             />
           ))}
@@ -75,35 +74,28 @@ export const Game = ({
         <div className="game__letters">
           {letters.map((e) => (
             <Letter
+              key={e}
               letter={e}
               show={true}
               onClick={(e: string) => {
                 //no ha sido clickeada esa letra
-                if (
-                  !lettersClicked.some(
-                    (i) => String(i).toLowerCase() === String(e).toLowerCase(),
-                  )
-                ) {
+                if (!lettersClicked.some((i) => i === e)) {
                   setLettersClicked([...lettersClicked, e]);
 
-                  const array_letters = words[game.location].split("");
                   //no pertenece letra a la palabra
-                  if (
-                    !array_letters.some(
-                      (i) =>
-                        String(i).toLowerCase() === String(e).toLowerCase(),
-                    )
-                  ) {
+                  if (!array_letters.some((i) => i === e)) {
                     setGame({
                       ...game,
                       lifes: game.lifes === 0 ? 0 : game.lifes - 1,
                     });
-                  } else {
-                    setWin(
-                      array_letters.every((letra) =>
-                        lettersClicked.includes(letra),
-                      ),
-                    );
+                  } else if (
+                    array_letters.every((letra) =>
+                      [...lettersClicked, e].includes(letra),
+                    )
+                  ) {
+                    setWin(true);
+                    setPlay(STATE.END);
+                    setRoute(routes.Menu);
                   }
                 }
               }}

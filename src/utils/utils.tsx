@@ -13,3 +13,10 @@ export enum STATE {
 }
 
 export const LIST_WORDS = ["Tu vierja", "Nose", "qiuo", "Esfdsf", "wqwawda"];
+
+export interface IGame {
+  location: number;
+  total: number;
+  lifes: number;
+  time: number;
+}

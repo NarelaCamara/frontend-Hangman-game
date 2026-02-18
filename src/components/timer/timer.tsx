@@ -4,9 +4,11 @@ import "./styles.css";
 export const Timer = ({
   totalTimeInSeconds,
   endTime,
+  pauseTime,
 }: {
   totalTimeInSeconds: number;
   endTime: () => void;
+  pauseTime: (time: number) => void;
 }) => {
   const [timeLeft, setTimeLeft] = useState(totalTimeInSeconds);
 
@@ -15,6 +17,8 @@ export const Timer = ({
       endTime();
       return;
     }
+
+    pauseTime(timeLeft);
 
     const interval = setInterval(() => {
       setTimeLeft((prev) => prev - 1);

@@ -13,6 +13,13 @@ function App() {
   const [selected, setSelected] = useState("");
   const [win, setWin] = useState(false);
 
+  const [game, setGame] = useState({
+    location: 0,
+    total: LIST_WORDS.length,
+    lifes: 5,
+    time: 150,
+  });
+
   return (
     <div className="app">
       {route === routes.Menu && (
@@ -23,6 +30,8 @@ function App() {
       )}
       {route === routes.Game && (
         <Game
+          game={game}
+          setGame={setGame}
           words={LIST_WORDS}
           setPlay={setPlay}
           setWin={setWin}
