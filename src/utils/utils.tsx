@@ -12,7 +12,7 @@ export enum STATE {
   "END",
 }
 
-export const LIST_WORDS = ["Tu vierja", "Nose", "qiuo", "Esfdsf", "wqwawda"];
+export const LIST_WORDS = ["Tu vieja", "Nose"];
 
 export interface IGame {
   location: number;

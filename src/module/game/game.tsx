@@ -24,10 +24,8 @@ export const Game = ({
   const letters = "abcdefghijklmnñopqrstuvwxyz".split("");
   const [lettersClicked, setLettersClicked] = useState([""]);
 
-  const array_letters = String(words[game.location])
-    .toLowerCase()
-    .split("")
-    .filter((e) => e !== " ");
+  const array_letters = String(words[game.location]).toLowerCase().split("");
+  const array_letters_without_space = array_letters.filter((e) => e !== " ");
 
   return (
     <div>
@@ -62,7 +60,7 @@ export const Game = ({
         </div>
 
         <div className="game__words">
-          {words[game.location].split("").map((e, i) => (
+          {array_letters.map((e, i) => (
             <Letter
               key={i}
               letter={e}
@@ -83,25 +81,28 @@ export const Game = ({
                   setLettersClicked([...lettersClicked, e]);
 
                   //no pertenece letra a la palabra
-                  if (!array_letters.some((i) => i === e)) {
+                  if (!array_letters_without_space.some((i) => i === e)) {
                     setGame({
                       ...game,
                       lifes: game.lifes === 0 ? 0 : game.lifes - 1,
                     });
                   } else if (
-                    array_letters.every((letra) =>
+                    array_letters_without_space.every((letra) =>
                       [...lettersClicked, e].includes(letra),
                     )
                   ) {
-                    setWin(true);
-                    setPlay(STATE.END);
-                    setRoute(routes.Menu);
                     setGame({
-                      location: 0,
-                      total: 0,
+                      ...game,
+                      location: game.location + 1,
                       lifes: 5,
                       time: 150,
                     });
+                    setLettersClicked([""]);
+                    if (game.total === game.location + 1) {
+                      setWin(true);
+                      setPlay(STATE.END);
+                      setRoute(routes.Menu);
+                    }
                   }
                 }
               }}
