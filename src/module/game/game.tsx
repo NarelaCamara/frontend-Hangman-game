@@ -95,7 +95,6 @@ export const Game = ({
                       ...game,
                       location: game.location + 1,
                       lifes: 5,
-                      time: 150,
                     });
                     setLettersClicked([""]);
                     if (game.total === game.location + 1) {

@@ -23,11 +23,22 @@ function App() {
   return (
     <div className="app">
       {route === routes.Menu && (
-        <Menu state={play} win={win} setRoute={setRoute} setPlay={setPlay} />
+        <Menu
+          state={play}
+          win={win}
+          setRoute={setRoute}
+          setPlay={setPlay}
+          reset={() =>
+            setGame({
+              location: 0,
+              total: LIST_WORDS.length,
+              lifes: 5,
+              time: 150,
+            })
+          }
+        />
       )}
-      {route === routes.Categories && (
-        <Categorie setRoute={setRoute} setSelected={setSelected} />
-      )}
+
       {route === routes.Game && (
         <Game
           game={game}
@@ -37,6 +48,10 @@ function App() {
           setWin={setWin}
           setRoute={setRoute}
         />
+      )}
+
+      {route === routes.Categories && (
+        <Categorie setRoute={setRoute} setSelected={setSelected} />
       )}
       {route === routes.Steps && <Steps setRoute={setRoute} />}
     </div>

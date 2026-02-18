@@ -7,9 +7,11 @@ import "./styles.css";
 export const Menu = ({
   setRoute,
   setPlay,
+  reset,
   win,
   state,
 }: {
+  reset: () => void;
   setPlay: (state: STATE) => void;
   setRoute: (route: routes) => void;
   state: STATE;
@@ -44,18 +46,26 @@ export const Menu = ({
             <button
               onClick={() => {
                 setRoute(routes.Game);
-                setPlay(STATE.PLAYING);
+                if (state === STATE.END) {
+                  reset();
+                }
               }}
             >
               {state === STATE.PAUSE ? "Continue" : "Play Again!"}
             </button>
-            <button onClick={() => setRoute(routes.Categories)}>
+            <button
+              onClick={() => {
+                setRoute(routes.Categories);
+                reset();
+              }}
+            >
               New Categorie
             </button>
             <button
               onClick={() => {
                 setRoute(routes.Menu);
                 setPlay(STATE.START);
+                reset();
               }}
             >
               Quit Game
