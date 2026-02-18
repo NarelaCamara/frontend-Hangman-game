@@ -22,9 +22,12 @@ export const Game = ({
 
   const [game, setGame] = useState({
     location: 0,
+    total: words.length,
     lifes: 5,
-    time: 15000000000000000,
+    time: 150,
   });
+
+  console.log(game);
 
   return (
     <div>
@@ -45,6 +48,9 @@ export const Game = ({
               setWin(false);
               setPlay(STATE.END);
               setRoute(routes.Menu);
+            }}
+            pauseTime={(time: number) => {
+              setGame({ ...game, time: time });
             }}
           />
 
@@ -72,8 +78,6 @@ export const Game = ({
               letter={e}
               show={true}
               onClick={(e: string) => {
-                const array_letters = words[game.location].split("");
-
                 //no ha sido clickeada esa letra
                 if (
                   !lettersClicked.some(
@@ -81,6 +85,8 @@ export const Game = ({
                   )
                 ) {
                   setLettersClicked([...lettersClicked, e]);
+
+                  const array_letters = words[game.location].split("");
                   //no pertenece letra a la palabra
                   if (
                     !array_letters.some(
@@ -88,7 +94,16 @@ export const Game = ({
                         String(i).toLowerCase() === String(e).toLowerCase(),
                     )
                   ) {
-                    setGame({ ...game, lifes: game.lifes - 1 });
+                    setGame({
+                      ...game,
+                      lifes: game.lifes === 0 ? 0 : game.lifes - 1,
+                    });
+                  } else {
+                    setWin(
+                      array_letters.every((letra) =>
+                        lettersClicked.includes(letra),
+                      ),
+                    );
                   }
                 }
               }}
