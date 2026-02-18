@@ -96,6 +96,12 @@ export const Game = ({
                     setWin(true);
                     setPlay(STATE.END);
                     setRoute(routes.Menu);
+                    setGame({
+                      location: 0,
+                      total: 0,
+                      lifes: 5,
+                      time: 150,
+                    });
                   }
                 }
               }}
