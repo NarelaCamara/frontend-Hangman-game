@@ -31,10 +31,13 @@ function App() {
     if (selected === "Movies") {
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setWords(LIST_WORDS_1);
+      setGame({ ...game, total: LIST_WORDS_1.length });
     } else if (selected === "Animals") {
       setWords(LIST_WORDS_2);
+      setGame({ ...game, total: LIST_WORDS_2.length });
     } else {
       setWords(LIST_WORDS_3);
+      setGame({ ...game, total: LIST_WORDS_3.length });
     }
   }, [selected]);
 
