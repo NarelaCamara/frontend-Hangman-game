@@ -1,10 +1,11 @@
 import heart from "../../assets/images/icon-heart.svg";
-import { Letter } from "../../components/letter/letter";
 import { NavTitleButton } from "../../components/nav-title-button/nav-title-button";
 import { useState } from "react";
 import { Timer } from "../../components/timer/timer";
 import { routes, STATE, type IGame } from "../../utils/utils";
 import "./styles.css";
+import { LetterWord } from "../../components/letter-word/letter-word";
+import { LetterAlphabet } from "../../components/letter-alphabet/letter-alphabet";
 
 export const Game = ({
   game,
@@ -27,6 +28,10 @@ export const Game = ({
   const array_letters = String(words[game.location]).toLowerCase().split("");
   const array_letters_without_space = array_letters.filter((e) => e !== " ");
 
+  console.log(
+    "lettersClicked.some((i) => i === e) ",
+    lettersClicked.some((i) => i === "e"),
+  );
   return (
     <div>
       <div className="game">
@@ -61,20 +66,19 @@ export const Game = ({
 
         <div className="game__words">
           {array_letters.map((e, i) => (
-            <Letter
+            <LetterWord
               key={i}
               letter={e}
-              show={lettersClicked.some((i) => i === e)}
-              onClick={() => {}}
+              showLetter={lettersClicked.some((i) => i === e)}
             />
           ))}
         </div>
         <div className="game__letters">
           {letters.map((e) => (
-            <Letter
+            <LetterAlphabet
               key={e}
               letter={e}
-              show={true}
+              clickedLetter={lettersClicked.some((i) => i !== e)}
               onClick={(e: string) => {
                 //no ha sido clickeada esa letra
                 if (!lettersClicked.some((i) => i === e)) {
