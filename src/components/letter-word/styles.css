@@ -26,7 +26,27 @@
 }
 
 .--letter__word__not__show {
-}
+  /* Word Box */
 
-.--letter__word__show {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 64px;
+  gap: 8px;
+
+  width: 112px;
+  height: 128px;
+
+  background: #2463ff;
+  box-shadow:
+    inset 0px -2px 0px 3px #140e66,
+    inset 0px 1px 0px 6px #3c74ff;
+  border-radius: 40px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
 }

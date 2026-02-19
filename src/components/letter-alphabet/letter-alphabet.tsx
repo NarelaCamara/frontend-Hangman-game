@@ -9,9 +9,10 @@ export const LetterAlphabet = ({
   clickedLetter?: boolean;
   onClick: (letter: string) => void;
 }) => {
+  console.log(" letter,  clickedLetter, ", letter, clickedLetter);
   return (
     <div
-      className={`letter__alphabet ${clickedLetter ? "letter__alphabet--clicked" : "  letter__alphabet--hover"}`}
+      className={`${clickedLetter ? "letter__alphabet--clicked" : "letter__alphabet"}`}
       onClick={() => onClick(letter)}
     >
       {String(letter).toLocaleUpperCase()}

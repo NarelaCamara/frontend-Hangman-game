@@ -66,11 +66,7 @@ export const Game = ({
 
         <div className="game__words">
           {array_letters.map((e, i) => (
-            <LetterWord
-              key={i}
-              letter={e}
-              showLetter={lettersClicked.some((i) => i === e)}
-            />
+            <LetterWord key={i} letter={e} showLetter={true} />
           ))}
         </div>
         <div className="game__letters">
@@ -78,7 +74,7 @@ export const Game = ({
             <LetterAlphabet
               key={e}
               letter={e}
-              clickedLetter={lettersClicked.some((i) => i !== e)}
+              clickedLetter={lettersClicked.some((i) => i === e)}
               onClick={(e: string) => {
                 //no ha sido clickeada esa letra
                 if (!lettersClicked.some((i) => i === e)) {

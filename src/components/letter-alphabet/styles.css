@@ -1,22 +1,30 @@
 .letter__alphabet {
+  /* Letter Box */
+
+  /* Auto layout */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 0px;
   gap: 32px;
+
   width: 109px;
   height: 84px;
+
   background: #ffffff;
   border-radius: 24px;
 
+  /* Inside auto layout */
   flex: none;
-  order: 0;
+  order: 1;
   align-self: stretch;
   flex-grow: 0;
+
+  margin: 0.75rem;
 }
 
-.letter__alphabet--hover {
+.letter__alphabet:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -37,20 +45,19 @@
 }
 
 .letter__alphabet--clicked {
+  margin: 0.75rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 0px;
   gap: 32px;
-
   width: 109px;
   height: 84px;
-
   background: #ffffff;
   opacity: 0.25;
   border-radius: 24px;
-
+  /* Inside auto layout */
   flex: none;
   order: 3;
   align-self: stretch;
