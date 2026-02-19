@@ -1,24 +1,42 @@
 import "./App.css";
 import { Game } from "./module/game/game";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Categorie } from "./module/categorie/categorie";
-import { LIST_WORDS, routes, STATE } from "./utils/utils";
+import {
+  LIST_WORDS_1,
+  LIST_WORDS_2,
+  LIST_WORDS_3,
+  routes,
+  STATE,
+} from "./utils/utils";
 import { Menu } from "./components/menu/menu";
 import { Steps } from "./module/steps/steps";
 
 function App() {
   const [route, setRoute] = useState(routes.Menu);
   const [play, setPlay] = useState(STATE.START);
+  const [words, setWords] = useState([""]);
 
   const [selected, setSelected] = useState("");
   const [win, setWin] = useState(false);
 
   const [game, setGame] = useState({
     location: 0,
-    total: LIST_WORDS.length,
+    total: 0,
     lifes: 5,
     time: 150,
   });
+
+  useEffect(() => {
+    if (selected === "Movies") {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setWords(LIST_WORDS_1);
+    } else if (selected === "Animals") {
+      setWords(LIST_WORDS_2);
+    } else {
+      setWords(LIST_WORDS_3);
+    }
+  }, [selected]);
 
   return (
     <div className="app">
@@ -30,8 +48,8 @@ function App() {
           setPlay={setPlay}
           reset={() =>
             setGame({
+              ...game,
               location: 0,
-              total: LIST_WORDS.length,
               lifes: 5,
               time: 150,
             })
@@ -42,8 +60,8 @@ function App() {
       {route === routes.Game && (
         <Game
           game={game}
+          words={words}
           setGame={setGame}
-          words={LIST_WORDS}
           setPlay={setPlay}
           setWin={setWin}
           setRoute={setRoute}

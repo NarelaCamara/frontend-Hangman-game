@@ -12,7 +12,9 @@ export enum STATE {
   "END",
 }
 
-export const LIST_WORDS = ["Tu vieja", "Nose"];
+export const LIST_WORDS_1 = ["Tu vieja", "Nose"];
+export const LIST_WORDS_2 = ["Tu mama", "Nose"];
+export const LIST_WORDS_3 = ["Tu papa", "Nose"];
 
 export interface IGame {
   location: number;
