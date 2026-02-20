@@ -18,6 +18,7 @@
     inset 0px 1px 0px 6px #3c74ff;
   border-radius: 40px;
   font-size: 88px;
+  color: white;
 
   /* Inside auto layout */
   flex: none;
