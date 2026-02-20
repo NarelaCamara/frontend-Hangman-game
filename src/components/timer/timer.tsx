@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
 import "./styles.css";
+import { useTimer } from "../../hooks/useTimer";
 
 export const Timer = ({
   totalTimeInSeconds,
@@ -10,30 +10,15 @@ export const Timer = ({
   endTime: () => void;
   pauseTime: (time: number) => void;
 }) => {
-  const [timeLeft, setTimeLeft] = useState(totalTimeInSeconds);
-
-  useEffect(() => {
-    if (timeLeft <= 0) {
-      endTime();
-      return;
-    }
-
-    pauseTime(timeLeft);
-
-    const interval = setInterval(() => {
-      setTimeLeft((prev) => prev - 1);
-    }, 1000);
-
-    return () => clearInterval(interval); // Limpieza
-  }, [timeLeft]);
+  const { time } = useTimer(totalTimeInSeconds, endTime, pauseTime);
 
   // Cálculo del porcentaje para el CSS
-  const percentage = (timeLeft / totalTimeInSeconds) * 100;
+  const percentage = (time / totalTimeInSeconds) * 100;
 
   return (
     <div className="timer-container">
       <div className="timer-fill" style={{ width: `${percentage}%` }}></div>
-      <span className="timer-text">{timeLeft}s</span>
+      <span className="timer-text">{time}s</span>
     </div>
   );
 };
