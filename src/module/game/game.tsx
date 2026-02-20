@@ -1,9 +1,9 @@
+import "./styles.css";
 import heart from "../../assets/images/icon-heart.svg";
 import { NavTitleButton } from "../../components/nav-title-button/nav-title-button";
 import { useState } from "react";
 import { Timer } from "../../components/timer/timer";
 import { routes, STATE, type IGame } from "../../utils/utils";
-import "./styles.css";
 import { LetterWord } from "../../components/letter-word/letter-word";
 import { LetterAlphabet } from "../../components/letter-alphabet/letter-alphabet";
 
@@ -22,16 +22,12 @@ export const Game = ({
   setWin: (route: boolean) => void;
   setPlay: (route: STATE) => void;
 }) => {
-  const letters = "abcdefghijklmnñopqrstuvwxyz".split("");
+  const alphabet = "abcdefghijklmnñopqrstuvwxyz".split("");
   const [lettersClicked, setLettersClicked] = useState([""]);
 
-  const array_letters = String(words[game.location]).toLowerCase().split("");
-  const array_letters_without_space = array_letters.filter((e) => e !== " ");
+  const array_word = String(words[game.location]).toLowerCase().split("");
+  const array_letters_without_space = array_word.filter((e) => e !== " ");
 
-  console.log(
-    "lettersClicked.some((i) => i === e) ",
-    lettersClicked.some((i) => i === "e"),
-  );
   return (
     <div>
       <div className="game">
@@ -65,16 +61,16 @@ export const Game = ({
         </div>
 
         <div className="game__words">
-          {array_letters.map((e, i) => (
-            <LetterWord key={i} letter={e} showLetter={true} />
+          {array_word.map((e, i) => (
+            <LetterWord key={i} letter={e} lettersClicked={lettersClicked} />
           ))}
         </div>
         <div className="game__letters">
-          {letters.map((e) => (
+          {alphabet.map((e) => (
             <LetterAlphabet
               key={e}
               letter={e}
-              clickedLetter={lettersClicked.some((i) => i === e)}
+              lettersClicked={lettersClicked}
               onClick={(e: string) => {
                 //no ha sido clickeada esa letra
                 if (!lettersClicked.some((i) => i === e)) {

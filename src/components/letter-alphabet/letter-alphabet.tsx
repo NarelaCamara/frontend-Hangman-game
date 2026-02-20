@@ -2,17 +2,22 @@ import "./styles.css";
 
 export const LetterAlphabet = ({
   letter,
-  clickedLetter,
+  lettersClicked,
   onClick,
 }: {
   letter: string;
-  clickedLetter?: boolean;
+  lettersClicked?: string[];
   onClick: (letter: string) => void;
 }) => {
-  console.log(" letter,  clickedLetter, ", letter, clickedLetter);
+  console.log(
+    " LetterAlphabet, ",
+    letter,
+    lettersClicked,
+    lettersClicked?.some((e) => e === letter),
+  );
   return (
     <div
-      className={`${clickedLetter ? "letter__alphabet--clicked" : "letter__alphabet"}`}
+      className={`${lettersClicked?.some((e) => e === letter) ? "letter__alphabet--clicked" : "letter__alphabet"}`}
       onClick={() => onClick(letter)}
     >
       {String(letter).toLocaleUpperCase()}
