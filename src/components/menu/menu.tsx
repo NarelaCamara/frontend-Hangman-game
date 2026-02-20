@@ -44,6 +44,7 @@ export const Menu = ({
         {(state === STATE.PAUSE || state === STATE.END) && (
           <>
             <button
+              className="menu__modal__play__again__pause"
               onClick={() => {
                 setRoute(routes.Game);
                 if (state === STATE.END) {
@@ -51,24 +52,28 @@ export const Menu = ({
                 }
               }}
             >
-              {state === STATE.PAUSE ? "Continue" : "Play Again!"}
+              {String(
+                state === STATE.PAUSE ? "Continue" : "Play Again!",
+              ).toLocaleUpperCase()}
             </button>
             <button
+              className="menu__modal__new__category"
               onClick={() => {
                 setRoute(routes.Categories);
                 reset();
               }}
             >
-              New Categorie
+              {String("New Categorie").toLocaleUpperCase()}
             </button>
             <button
+              className="menu__modal__quit__game"
               onClick={() => {
                 setRoute(routes.Menu);
                 setPlay(STATE.START);
                 reset();
               }}
             >
-              Quit Game
+              {String("Quit Game").toLocaleUpperCase()}
             </button>
           </>
         )}

@@ -1,4 +1,37 @@
-.menu {
+.menu__modal__new__category,
+.menu__modal__play__again__pause {
+  /* Button */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 64px;
+  gap: 8px;
+
+  width: 276px;
+  height: 62px;
+
+  background: #2463ff;
+  box-shadow:
+    inset 0px -2px 0px 3px #140e66,
+    inset 0px 1px 0px 6px #3c74ff;
+  border-radius: 40px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+
+  color: white;
+  font-size: 20px;
+
+  font-family: "Mouse Memoirs";
+  font-style: normal;
+  font-weight: 400;
+
+  margin: 16px;
 }
 
 .menu__title {
@@ -6,10 +39,6 @@
   width: 338px;
   height: 125px;
 
-  /* text-preset-2 */
-  font-family: "Mouse Memoirs";
-  font-style: normal;
-  font-weight: 400;
   font-size: 104px;
   line-height: 120%;
   /* identical to box height, or 125px */
@@ -40,4 +69,37 @@
   border-radius: 4.5rem;
   padding: 5rem;
   margin-top: 4rem 1.5rem 1.5rem 1.5rem;
+}
+
+.menu__modal__quit__game {
+  /* Button */
+  font-family: "Mouse Memoirs";
+  font-style: normal;
+  font-weight: 400;
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 64px;
+  gap: 8px;
+
+  width: 236px;
+  height: 62px;
+
+  /* colors/gradient/3 */
+  background: linear-gradient(180deg, #fe71fe 16.42%, #7199ff 100%);
+  box-shadow:
+    inset 0px -2px 0px 3px #140e66,
+    inset 0px 1px 0px 6px #c642fb;
+  border-radius: 40px;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+
+  color: white;
+  font-size: 20px;
+  margin: 16px;
 }
