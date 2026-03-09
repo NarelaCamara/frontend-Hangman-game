@@ -43,38 +43,41 @@ function App() {
 
   return (
     <div className="app">
-      {route === routes.Menu && (
-        <Menu
-          state={play}
-          win={win}
-          setRoute={setRoute}
-          setPlay={setPlay}
-          reset={() =>
-            setGame({
-              ...game,
-              location: 0,
-              lifes: 5,
-              time: 150,
-            })
-          }
-        />
-      )}
+      <div></div>
+      <div>
+        {route === routes.Menu && (
+          <Menu
+            state={play}
+            win={win}
+            setRoute={setRoute}
+            setPlay={setPlay}
+            reset={() =>
+              setGame({
+                ...game,
+                location: 0,
+                lifes: 5,
+                time: 150,
+              })
+            }
+          />
+        )}
 
-      {route === routes.Game && (
-        <Game
-          game={game}
-          words={words}
-          setGame={setGame}
-          setPlay={setPlay}
-          setWin={setWin}
-          setRoute={setRoute}
-        />
-      )}
+        {route === routes.Game && (
+          <Game
+            game={game}
+            words={words}
+            setGame={setGame}
+            setPlay={setPlay}
+            setWin={setWin}
+            setRoute={setRoute}
+          />
+        )}
 
-      {route === routes.Categories && (
-        <Categorie setRoute={setRoute} setSelected={setSelected} />
-      )}
-      {route === routes.Steps && <Steps setRoute={setRoute} />}
+        {route === routes.Categories && (
+          <Categorie setRoute={setRoute} setSelected={setSelected} />
+        )}
+        {route === routes.Steps && <Steps setRoute={setRoute} />}
+      </div>
     </div>
   );
 }
