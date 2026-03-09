@@ -44,7 +44,7 @@ function App() {
   return (
     <div className="app">
       <div></div>
-      <div>
+      <div className="app__center">
         {route === routes.Menu && (
           <Menu
             state={play}
@@ -78,6 +78,7 @@ function App() {
         )}
         {route === routes.Steps && <Steps setRoute={setRoute} />}
       </div>
+       <div></div>
     </div>
   );
 }

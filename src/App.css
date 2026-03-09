@@ -2,5 +2,9 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(1, 1fr);
-  gap: 8px;
+  gap: 16px;
+}
+
+.app__center {
+  grid-column-start: 2;
 }
